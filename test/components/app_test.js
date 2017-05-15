@@ -1,14 +1,22 @@
-import { renderComponent , expect } from '../test_helper';
-import App from '../../src/components/app';
+import { renderComponent, expect } from '../test_helper'
+import App from '../../src/components/app'
+import CommentBox from '../../src/components/comment_box'
 
-describe('App' , () => {
-  let component;
+describe('App', () => {
+  let component
 
   beforeEach(() => {
-    component = renderComponent(App);
-  });
+    component = renderComponent(App)
+  })
 
-  it('renders something', () => {
-    expect(component).to.exist;
-  });
-});
+  // it will test a single attribute of a target
+  it('shows instance of CommentBox', () => {
+    expect(component.find('.comment-box')).to.exist
+  })
+
+  it('shows a comment list', () => {
+    expect(component.find('.comment-list')).to.exist
+  })
+})
+
+
